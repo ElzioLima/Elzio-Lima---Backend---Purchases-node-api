@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "esnext",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "rootDirs": ["src"],
+    "baseUrl": "src"
+  },
+  "include": ["src", "knexfile.js"],
+  "exclude": []
+}
