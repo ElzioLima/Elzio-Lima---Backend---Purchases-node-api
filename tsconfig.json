@@ -8,6 +8,6 @@
     "rootDirs": ["src"],
     "baseUrl": "src"
   },
-  "include": ["src", "knexfile.js"],
+  "include": ["src"],
   "exclude": []
 }

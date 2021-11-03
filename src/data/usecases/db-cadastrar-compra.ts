@@ -7,18 +7,11 @@ export class DBCadastrarCompra implements CadastrarCompra{
         private readonly cadastrarCompraRepositorio: CadastrarCompraRepositorio
     ) {}
 
-    async cadastra (data: any): Promise<boolean> {
-        const [ tipo_pagamento, status, produtos ] = data
-        const data_atualizacao = KnexHelper.getDateNow()
-        const data_criacao = KnexHelper.getDateNow()
+    async cadastra (data: any, produtos: number[]): Promise<boolean> {
         const compra = {
-            tipo_pagamento,
-            status,
-            produtos,
-            data_criacao,
-            data_atualizacao
+            ...data
         }
-        const result = this.cadastrarCompraRepositorio.cadastra(compra)
+        const result = await this.cadastrarCompraRepositorio.cadastra(compra, produtos)
         return result
     }
 }

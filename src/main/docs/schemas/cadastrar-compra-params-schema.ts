@@ -8,7 +8,10 @@ export const cadastrarCompraParamsSchema = {
             type: "string"
         },
         produtos: {
-            type: "array"
+            type: "array",
+            items: {
+                type: "number"
+            }
         }
     },
     require: ["tipo_pagamento", "status", "produtos"]

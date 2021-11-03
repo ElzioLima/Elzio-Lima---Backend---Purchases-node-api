@@ -1,6 +1,6 @@
 import { KnexHelper } from "../infra/db"
 
-const knexfile = require('knexfile')[process.env.NODE_ENV || 'development']
+const knexfile = require("../../knexfile")
 
 KnexHelper.connect(knexfile)
   .then(async () => {

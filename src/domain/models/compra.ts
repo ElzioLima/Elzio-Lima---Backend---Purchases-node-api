@@ -13,11 +13,10 @@ export type CadastroCompraModel = {
     data_criacao: any
     tipo_pagamento: String
     status: String
-    produtos: ProdutoModel[]
+    produtos: number[]
 }
 
 export type AtualizacaoCompraModel = {
     tipo_pagamento: String
     status: String
-    produtos: ProdutoModel[]
 }

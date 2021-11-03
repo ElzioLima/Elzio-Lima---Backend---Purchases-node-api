@@ -16,12 +16,11 @@ export class CadastrarCompraController implements Controller {
             if (error) {
                 return badRequest(error)
             }
-            const [ tipo_pagamento, status, produtos ] = request
+            const { tipo_pagamento, status, produtos } = request
             const result = await this.cadastrarCompra.cadastra({
                 tipo_pagamento,
-                status,
-                produtos
-            })
+                status
+            }, produtos)
             return ok(result)
         } catch (error) {
             return serverError(error)

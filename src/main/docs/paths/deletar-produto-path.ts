@@ -1,5 +1,5 @@
 export const deletarProdutoPath = {
-  post: {
+  delete: {
     tags: ["Produto"],
     summary: "API para deletar um produto",
     description: "Essa rota não pode ser executada por **qualquer usuário**",

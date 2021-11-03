@@ -8,17 +8,15 @@ export class DBAtualizarProduto implements AtualizarProduto {
     ) {}
 
     async atualiza (data: any): Promise<boolean> {
-        const [ nome, descricao, preco ] = data
-        const data_criacao = KnexHelper.getDateNow()
+        const { id, nome, descricao, preco } = data
         const data_atualizacao = KnexHelper.getDateNow()
         const produto = {
             nome,
             descricao,
             preco,
-            data_criacao,
             data_atualizacao
         }
-        const result = this.atualizarProdutoRepositorio.atualiza(produto)
+        const result = await this.atualizarProdutoRepositorio.atualiza(produto, id)
         return result
     }
 }

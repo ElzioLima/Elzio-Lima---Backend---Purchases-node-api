@@ -1,5 +1,5 @@
 export const atualizarProdutoPath = {
-  post: {
+  put: {
     tags: ["Produto"],
     summary: "API para atualizar um produto",
     description: "Essa rota não pode ser executada por **qualquer usuário**",

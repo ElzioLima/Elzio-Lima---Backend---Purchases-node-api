@@ -1,4 +1,3 @@
-import { KnexHelper } from "../../infra/db"
 import { AtualizarCompra } from "../../domain/usecases"
 import { AtualizarCompraRepositorio } from "../protocols"
 
@@ -8,15 +7,12 @@ export class DBAtualizarCompra implements AtualizarCompra {
     ) {}
 
     async atualiza (data: any): Promise<boolean> {
-        const [id, tipo_pagamento, status, produtos ] = data
-        const data_atualizacao = KnexHelper.getDateNow()
+        const { id, tipo_pagamento, status, produtos } = data
         const compra = {
             tipo_pagamento,
-            status,
-            produtos,
-            data_atualizacao
+            status
         }
-        const result = this.atualizarCompraRepositorio.atualiza(compra, id)
+        const result = await this.atualizarCompraRepositorio.atualiza(compra, produtos, id)
         return result
     }
 }

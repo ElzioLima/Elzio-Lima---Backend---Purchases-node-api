@@ -8,17 +8,10 @@ export class DBCadastrarProduto implements CadastrarProduto {
     ) {}
 
     async cadastra (data: any): Promise<boolean> {
-        const [ nome, descricao, preco ] = data
-        const data_criacao = KnexHelper.getDateNow()
-        const data_atualizacao = KnexHelper.getDateNow()
         const produto = {
-            nome,
-            descricao,
-            preco,
-            data_criacao,
-            data_atualizacao
+            ...data
         }
-        const result = this.cadastrarProdutoRepositorio.cadastra(produto)
+        const result = await this.cadastrarProdutoRepositorio.cadastra(produto)
         return result
     }
 }

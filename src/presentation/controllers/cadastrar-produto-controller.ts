@@ -16,7 +16,7 @@ export class CadastrarProdutoController implements Controller {
             if (error) {
                 return badRequest(error)
             }
-            const [ nome, descricao, preco ] = request
+            const { nome, descricao, preco } = request
             const result = await this.cadastrarProduto.cadastra({
                 nome,
                 descricao,

@@ -1,6 +1,9 @@
 export const atualizarCompraParamsSchema = {
     type: "object",
     properties: {
+        id: {
+            type: "number"
+        },
         tipo_pagamento: {
             type: "string"
         },
@@ -8,8 +11,11 @@ export const atualizarCompraParamsSchema = {
             type: "string"
         },
         produtos: {
-            type: "array"
+            type: "array",
+            items: {
+                type: "number"
+            }
         }
     },
-    require: ["tipo_pagamento", "status", "produtos"]
+    require: ["id", "tipo_pagamento", "status", "produtos"]
 }  

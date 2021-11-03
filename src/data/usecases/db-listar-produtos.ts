@@ -8,7 +8,7 @@ export class DBListarProdutos implements ListarProdutos {
     ) {}
 
     async lista (): Promise<ProdutoModel[]> {
-        const result = this.listarProdutosRepositorio.lista()
+        const result = await this.listarProdutosRepositorio.lista()
         return result
     }
 }

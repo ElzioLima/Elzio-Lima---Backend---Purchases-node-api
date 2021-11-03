@@ -10,7 +10,7 @@ export class AtualizarProdutoController implements Controller {
 
     async handle (request: any): Promise<HttpResponse> {
         try {
-            const [id, nome, descricao, preco ] = request
+            const {id, nome, descricao, preco } = request
             const result = await this.atualizarProduto.atualiza({
                 id,
                 nome,

@@ -1,6 +1,9 @@
 export const atualizarProdutoParamsSchema = {
     type: "object",
     properties: {
+        id: {
+            type: "number"
+        },
         nome: {
             type: "string"
         },
@@ -10,6 +13,5 @@ export const atualizarProdutoParamsSchema = {
         preco: {
             type: "number"
         }
-    },
-    require: [ "nome", "descricao", "preco" ]
+    }
 }  

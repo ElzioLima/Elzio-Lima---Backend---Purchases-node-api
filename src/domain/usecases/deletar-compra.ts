@@ -1,3 +1,3 @@
 export interface DeletarCompra {
-    deleta (id: number): Promise<boolean>
+    deleta (data: number): Promise<boolean>
 }

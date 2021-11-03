@@ -5,34 +5,34 @@ import { CadastroProdutoModel, AtualizacaoProdutoModel, ProdutoModel } from "../
 export class ProdutoMysqlRepositorio implements CadastrarProdutoRepositorio, AtualizarProdutoRepositorio, ListarProdutosRepositorio, DeletarProdutoRepositorio {
     async cadastra (data: CadastroProdutoModel): Promise<boolean> {
         const produtoRelation = KnexHelper.getRelation("produto")
-        const id = produtoRelation.insert(data).returning("id")
-        if (id) {
-            return true
+        const result = await produtoRelation.insert(data)
+        if (!result) {
+            return false
         }
-        return false
+        return true
     }
 
-    async atualiza (data: AtualizacaoProdutoModel): Promise<boolean> {
+    async atualiza (data: AtualizacaoProdutoModel, id: number): Promise<boolean> {
         const produtoRelation = KnexHelper.getRelation("produto")
-        const id = produtoRelation.update(data).returning("id")
-        if (id) {
-            return true
+        const result = await produtoRelation.update(data).where({id})
+        if (!result) {
+            return false
         }
-        return false
+        return true
     }
 
     async lista (): Promise<ProdutoModel[]> {
         const produtoRelation = KnexHelper.getRelation("produto")
-        const produtos = produtoRelation.select("*")
-        return produtos
+        const result = await produtoRelation.select("*")
+        return result
     }
 
-    async deleta (data: number): Promise<boolean> {
+    async deleta (id: number): Promise<boolean> {
         const produtoRelation = KnexHelper.getRelation("produto")
-        const id = produtoRelation.delete().where({data}).returning("id")
-        if (id) {
-            return true
+        const result = await produtoRelation.delete().where({ id })
+        if (!result) {
+            return false
         }
-        return false
+        return true
     }
 }

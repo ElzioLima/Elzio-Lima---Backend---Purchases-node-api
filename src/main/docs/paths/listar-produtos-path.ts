@@ -1,5 +1,5 @@
 export const listarProdutoPath = {
-  post: {
+  get: {
     tags: ["Produto"],
     summary: "API para listar produtos",
     description: "Essa rota não pode ser executada por **qualquer usuário**",

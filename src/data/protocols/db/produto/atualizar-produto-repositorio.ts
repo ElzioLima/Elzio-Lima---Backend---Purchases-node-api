@@ -1,5 +1,5 @@
 import { AtualizacaoProdutoModel } from "../../../../domain/models/produto"
 
 export interface AtualizarProdutoRepositorio {
-    atualiza (data: AtualizacaoProdutoModel): Promise<boolean>
+    atualiza (data: AtualizacaoProdutoModel, id: number): Promise<boolean>
 }

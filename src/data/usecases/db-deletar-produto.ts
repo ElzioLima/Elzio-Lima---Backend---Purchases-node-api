@@ -6,8 +6,8 @@ export class DBDeletarProduto implements DeletarProduto {
         private readonly deletarProdutoRepositorio: DeletarProdutoRepositorio
     ) {}
 
-    async deleta (id: number): Promise<boolean> {
-        const result = this.deletarProdutoRepositorio.deleta(id)
+    async deleta (data: number): Promise<boolean> {
+        const result = await this.deletarProdutoRepositorio.deleta(data)
         return result
     }
 }

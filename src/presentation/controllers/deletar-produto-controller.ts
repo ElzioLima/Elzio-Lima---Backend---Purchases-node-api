@@ -6,7 +6,7 @@ import { HttpResponse } from "../protocols/http"
 
 export class DeletarProdutoController implements Controller {
     constructor (
-        private readonly cadastrarProduto: DeletarProduto,
+        private readonly deletarProduto: DeletarProduto,
         private readonly validation: Validation
     ) {}
 
@@ -16,8 +16,8 @@ export class DeletarProdutoController implements Controller {
             if (error) {
                 return badRequest(error)
             }
-            const [id] = request
-            const result = await this.cadastrarProduto.deleta(id)
+            const { id } = request
+            const result = await this.deletarProduto.deleta(id)
             return ok(result)
         } catch (error) {
             return serverError(error)

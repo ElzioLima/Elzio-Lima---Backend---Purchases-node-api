@@ -10,7 +10,7 @@ export class AtualizarCompraController implements Controller {
 
     async handle (request: any): Promise<HttpResponse> {
         try {
-            const [id, tipo_pagamento, status, produtos ] = request
+            const { id, tipo_pagamento, status, produtos } = request
             const result = await this.atualizarCompra.atualiza({
                 id,
                 tipo_pagamento,

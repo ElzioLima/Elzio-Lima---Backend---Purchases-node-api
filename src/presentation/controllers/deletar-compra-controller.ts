@@ -16,7 +16,7 @@ export class DeletarCompraController implements Controller {
             if (error) {
                 return badRequest(error)
             }
-            const [id] = request
+            const { id } = request
             const result = await this.deletarCompra.deleta(id)
             return ok(result)
         } catch (error) {

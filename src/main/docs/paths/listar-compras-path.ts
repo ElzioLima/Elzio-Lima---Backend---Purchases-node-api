@@ -1,5 +1,5 @@
 export const listarComprasPath = {
-  post: {
+  get: {
     tags: ["Compra"],
     summary: "API para listar compras",
     description: "Essa rota não pode ser executada por **qualquer usuário**",

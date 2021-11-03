@@ -2,14 +2,13 @@ import { Knex } from "knex";
 
 
 export async function up(knex: Knex): Promise<void> {
-    return knex.schema.createTable('compraProduto', (table) => {
-        table.bigIncrements("id")
-        table.foreign("compra_id").references("id").inTable("compra").notNullable().onDelete('CASCADE')
-        table.foreign("produto_id").references("id").inTable("produto").notNullable().onDelete('CASCADE')
+    return await knex.schema.createTable('compra_produto', (table) => {
+        table.bigInteger("compra_id").unsigned().notNullable().references("compra.id").onDelete('CASCADE')
+        table.bigInteger("produto_id").unsigned().notNullable().references("produto.id")
     })
 }
 
-export async function down(knex: Knex): Promise<void> {
-    return knex.schema.dropTable('compraProduto')
+export  async function down(knex: Knex): Promise<void> {
+    return await knex.schema.dropTable('compra_produto')
 }
 
