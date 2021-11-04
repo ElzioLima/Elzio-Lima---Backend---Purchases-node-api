@@ -18,6 +18,6 @@
 ## Usage
 
 	npm install --save-dev
-  npm run reset
+  	npm run reset
 	npm run start
 
