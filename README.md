@@ -1,19 +1,21 @@
 # Elzio-Lima - Backend - ICTS-node-api
 
-  Teste de competência
+Teste de competência
 
 # Posts API
 
-  An API for a simple Social Media, where users can public posts and see what others user are posting too Technologies
+An API for a simple Social Media, where users can public posts and see what others user are posting too Technologies
 
-    Node.JS
-    Express.JS
-    Knex.JS
-    MySQL
+	Node.JS
+	Express.JS
+	Knex.JS
+	MySQL
 
 ## Database configuration
 
-	Change database credentials at knexfile.ts
+	Install mysql version 8.0
+	create database icts
+	Change database connection credentials at knexfile.ts
   
 ## Usage
 
