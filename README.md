@@ -1,4 +1,4 @@
-# Elzio-Lima - Backend - ICTS-node-api
+# Elzio-Lima - Backend - Purchase-node-api
 
 Teste de competência
 
@@ -14,7 +14,7 @@ An API for a simple Social Media, where users can public posts and see what othe
 ## Database configuration
 
 	Install mysql version 8.0
-	create database icts
+	create database purchase
 	Change database connection credentials at knexfile.ts
   
 ## Usage
