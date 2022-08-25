@@ -3,9 +3,9 @@
 module.exports = {
     client: 'mysql2',
         connection: {
-            database: 'icts',
+            database: 'purchase',
             user: 'root',
-            password: 'icts202!'
+            password: 'purchase202!'
         },
     pool: {
         min: 2,
