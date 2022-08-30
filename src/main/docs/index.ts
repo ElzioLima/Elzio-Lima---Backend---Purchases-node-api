@@ -5,7 +5,7 @@ import components from "./components"
 export default {
   openapi: "3.0.0",
   info: {
-    title: "ICTS-Node-API",
+    title: "Purchase-Node-API",
     description: "Teste de competência referente à vaga de Desenvolvedor Fullstack",
     version: "1.0.0",
     contact: {
